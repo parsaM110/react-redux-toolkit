@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'; // provide global store to all component
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}> // provide global store to all components
+    <Provider store={store}> 
       <App />
     </Provider>
   </React.StrictMode>,
