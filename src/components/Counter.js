@@ -13,12 +13,19 @@ function Counter() {
             <button onClick={() => dispatch(increment())}>+</button>
             <button onClick={() => dispatch(decrement())}>-</button>
             <button onClick={() => dispatch(logCount())}>log</button>
-            <button onClick={() => dispatch(reset())}>reset</button>
+
+            <button onClick={() => {
+                dispatch(reset());
+                setIncrementAmount(1);
+                }}>reset</button>
+                
             <button onClick={() => dispatch(incrementByAmount(5))}>increment by 5</button>
+
             <div style={{backgroundColor: "red"}}>
                 <input value={incrementAmount} onChange={(e) => setIncrementAmount(e.target.value)} />
-                <button onClick={() => dispatch(incrementByAmount(Number(incrementAmount)))}>increment by amount {incrementAmount}</button>
-            </div>
+                <button onClick={() => dispatch(incrementByAmount(Number(incrementAmount) || 0)) }>increment by amount {incrementAmount}</button>
+            </div> 
+            {/* short circuiting the incrementByAmount if no value were given */}
         </div>
     );
 }

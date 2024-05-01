@@ -23,7 +23,9 @@ export const counterSlice = createSlice({
             state.count = 0
         },
         incrementByAmount: (state, action) => {
-            state.count += action.payload;
+            state.count += action.payload; 
+            // the reducer take state of store as  first argument and action as second argument
+            // so we can use state.count from state and action.payload from action
         }
     }
 });
